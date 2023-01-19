@@ -4,6 +4,7 @@ import { Email } from '@client/email-account_holder';
 import { AccountHolderRepository } from '@client/repositories/account_holder-repositories';
 import { PrismaAccountHolderMapper } from '../mapper/prisma.account-holder-mapper';
 import { PrismaService } from '../prisma.service';
+import { Prisma } from '@prisma/client';
 
 @Injectable()
 export class PrismaAccountHolderRepository implements AccountHolderRepository {
@@ -11,8 +12,16 @@ export class PrismaAccountHolderRepository implements AccountHolderRepository {
   findByEmail(email: Email): Promise<AccountHolder> {
     throw new Error('Method not implemented.');
   }
-  findOne(id: string): Promise<AccountHolder> {
-    throw new Error('Method not implemented.');
+  async findOne(id: string): Promise<AccountHolder | null> {
+    const accountHolder = await this.prisma.accountHolder.findUnique({
+      where: { id },
+    });
+
+    if (!accountHolder) {
+      return null;
+    }
+
+    return PrismaAccountHolderMapper.toDomain(accountHolder);
   }
   update(accountHolder: AccountHolder): Promise<void> {
     throw new Error('Method not implemented.');

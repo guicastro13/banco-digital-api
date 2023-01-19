@@ -14,7 +14,7 @@ export class PrismaAccountHolderMapper {
       updatedAt: accountHolder.updatedAt,
     };
   }
-  static toDomian(rawAccountHolder: RawAccountHolder) {
+  static toDomain(rawAccountHolder: RawAccountHolder) {
     return new AccountHolder(
       {
         name: rawAccountHolder.name,

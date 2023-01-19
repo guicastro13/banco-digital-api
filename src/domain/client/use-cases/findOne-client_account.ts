@@ -1,10 +1,12 @@
 import { Email } from 'src/domain/client/email-account_holder';
 import { AccountHolderRepository } from '@/domain/client/repositories/account_holder-repositories';
+import { Injectable } from '@nestjs/common';
 
 export type FindoneClientAccountRequest = {
   clientID: string;
 };
 
+@Injectable()
 export class FindoneClientAccount {
   constructor(
     private readonly clientAccountRepository: AccountHolderRepository,
