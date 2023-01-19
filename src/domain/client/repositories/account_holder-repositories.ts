@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { AccountHolder } from 'src/domain/client/account_holder';
-import { Email } from '../client/email-account_holder';
+import { AccountHolder } from '../account_holder';
+import { Email } from '../email-account_holder';
 
 export abstract class AccountHolderRepository {
   abstract create(accountHolder: AccountHolder): Promise<void>;

@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import { AccountHolder } from 'src/domain/client/account_holder';
-import { Email } from 'src/domain/client/email-account_holder';
-import { AccountHolderRepository } from 'src/domain/repositories/account_holder-repositories';
+import { AccountHolder } from '@client/account_holder';
+import { Email } from '@client/email-account_holder';
+import { AccountHolderRepository } from '@client/repositories/account_holder-repositories';
 import { PrismaAccountHolderMapper } from '../mapper/prisma.account-holder-mapper';
 import { PrismaService } from '../prisma.service';
 
