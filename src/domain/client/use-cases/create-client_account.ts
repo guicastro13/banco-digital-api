@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
-import { AccountHolderRepository } from 'src/domain/repositories/account_holder-repositories';
-import { AccountHolder } from '../../client/account_holder';
-import { Email } from '../../client/email-account_holder';
-import { Password } from '../../client/password-account_holder';
+import { AccountHolderRepository } from '../repositories/account_holder-repositories';
+import { AccountHolder } from '../account_holder';
+import { Email } from '../email-account_holder';
+import { Password } from '../password-account_holder';
 
 export type CreateClientAccountRequest = {
   name: string;
