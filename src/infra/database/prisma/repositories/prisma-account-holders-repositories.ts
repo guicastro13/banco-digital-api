@@ -4,7 +4,6 @@ import { Email } from '@client/email-account_holder';
 import { AccountHolderRepository } from '@client/repositories/account_holder-repositories';
 import { PrismaAccountHolderMapper } from '../mapper/prisma.account-holder-mapper';
 import { PrismaService } from '../prisma.service';
-import { Prisma } from '@prisma/client';
 
 @Injectable()
 export class PrismaAccountHolderRepository implements AccountHolderRepository {
